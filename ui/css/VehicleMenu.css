@@ -1,0 +1,139 @@
+.menu_container {
+    position: absolute;
+    width: 17vw;
+    border-radius: var(--border_radius);
+    user-select: none;
+    padding: 1vh;
+    font-family: var(--header_font_family);
+    color: var(--text_colour);
+}
+
+.menu_container.dragging {}
+
+.menu_header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1vh;
+}
+
+.menu_header h2 {
+    width: 80%;
+    font-family: var(--header_font_family);
+    text-shadow: var(--text_shadow);
+    padding: 0.1vh;
+}
+
+.menu_header::after {
+    position: absolute;
+    bottom: 0.1vh;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 0.4vh;
+    background: linear-gradient(to right, white, transparent);
+    border-radius: var(--border_radius);
+}
+
+.menu_tabs {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.3vh;
+    margin-top: 1vh;
+    overflow-x: auto;
+}
+
+.menu_tabs.main::after {
+    position: absolute;
+    bottom: 0.1vh;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 0.4vh;
+    background: linear-gradient(to right, white, transparent);
+    border-radius: var(--border_radius);
+}
+
+.tabs_scroll {
+    display: flex;
+    gap: 0.5vh;
+}
+
+.tabs_scroll.sub {
+    overflow-x: scroll;
+    padding-bottom: 1vh;
+    padding-right: 0.1vh;
+}
+
+.control_button,
+.tab_button {
+    min-width: fit-content;
+    background: var(--background);
+    color: var(--text_colour);
+    border: none;
+    padding: 0.5vh 1vh;
+    cursor: pointer;
+    font-size: 1.2vh;
+    text-transform: uppercase;
+    box-shadow: var(--box_shadow_inset);
+    font-family: inherit;
+}
+
+.control_button {
+    flex: 1;
+}
+
+.control_button:hover,
+.tab_button:hover {
+    background: var(--accent_colour);
+}
+
+.tab_button.active {
+    background: var(--accent_colour);
+}
+
+.menu_content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vh;
+    justify-content: flex-start;
+}
+
+.menu_option {
+    flex: 1 1 calc(50% - 1vh); 
+    background: var(--background);
+    color: var(--text_colour);
+    padding: 0.5vh 1vh;
+    text-align: center;
+    font-size: 1.2vh;
+    border-radius: var(--border_radius);
+    cursor: pointer;
+    box-shadow: var(--box_shadow_inset);
+    text-transform: uppercase;
+    height: fit-content;
+}
+
+.menu_option:not(.has-submenu):hover {
+    background: var(--accent_colour);
+}
+
+.submenu {
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
+}
+
+.submenu_option {
+    background: var(--secondary_background);
+    padding: 0.5vh;
+    box-shadow: var(--box_shadow_inset);
+    border-radius: var(--border_radius);
+    text-transform: uppercase;
+}
+
+.submenu_option:hover {
+    background: var(--accent_colour);
+}
