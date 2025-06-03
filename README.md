@@ -89,7 +89,7 @@ The menu uses these root colours however the canvas telemtry elements you can ed
 Since this is standalone it is just a drag and drop resource;
 
 - After customising config add the resource into your server resources
-- Type `refresh; ensure boii_vehiclemenu` into the console and you should be ready to go. 
+- Type `refresh; ensure vehicle_menu` into the console and you should be ready to go. 
 - Or restart your server.
 
 ---
@@ -124,7 +124,7 @@ For Example:
 
 ```lua
 --- Registering an event method.
-exports.boii_vehiclemenu:add_method('toggle_autopilot', function(response)
+exports.vehicle_menu:add_method('toggle_autopilot', function(response)
     local vehicle = response.vehicle -- Response options; 'source', 'player', 'vehicle', 'is_active'
 
     if GetVehicleClass(vehicle) == 8 then
@@ -133,7 +133,7 @@ exports.boii_vehiclemenu:add_method('toggle_autopilot', function(response)
 end)
 
 --- Removing a registered method.
-exports.boii_vehiclemenu:remove_method('toggle_autopilot')
+exports.vehicle_menu:remove_method('toggle_autopilot')
 ```
 
 ---
